@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dir /b appHttpLivewire)",
+      "Bash(for file in forgot-password/index.html reset-password/index.html settings/index.html sign-in/index.html sign-up/index.html)",
+      "Bash(do sed -i 's/App\\\\Http\\\\Livewire/App\\\\Livewire/g' \"$file\")",
+      "Bash(done)",
+      "Bash(php:*)",
+      "Bash(composer install:*)",
+      "Bash(test:*)",
+      "Bash(copy:*)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
