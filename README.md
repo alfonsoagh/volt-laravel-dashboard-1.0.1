@@ -1,6 +1,54 @@
 # [Volt Dashboard Laravel](https://volt-laravel-admin-dashboard.updivision.com/dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20Volt%20Dashboard%20made%20by%20%40Themesberg%20and%20%40UPDIVISION%20%23webdesign%20%23dashboard%20%23laravel%20%23livewire%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.themesberg.com%2Fproduct%2Flaravel%2Fvolt-pro-admin-dashboard-template)
 ## Free Frontend Web App for Laravel with Livewire & Alpine.js
 
+> Project setup notes for this repository (fork/customized)
+
+This project has been updated for a modern local setup:
+
+- PHP/Laravel: Laravel 12, PHP >= 8.2
+- Frontend toolchain: Laravel Mix 6 (Webpack 5) — no Vite
+- Node.js: 22.x, npm: 10.x
+- UI framework: Bootstrap 5.3.3 (bundle, via CDN in the base layout)
+- Livewire 3.x
+
+Quick start (Windows PowerShell):
+
+```powershell
+# 1) Install PHP deps
+composer install
+
+# 2) Install Node deps (Node 22, npm 10)
+npm install
+
+# 3) Environment & app key
+Copy-Item .env.example .env -Force
+php artisan key:generate
+
+# 4) Database (uses SQLite by default if configured)
+php artisan migrate --seed
+
+# 5) Build frontend assets (development)
+npm run development
+
+# 6) Run the tests (optional but recommended)
+php artisan test
+
+# 7) Serve the app
+php artisan serve
+```
+
+Production build:
+
+```powershell
+npm run production
+```
+
+Notes:
+
+- Bootstrap is loaded via the 5.3.3 bundle CDN in `resources/views/layouts/base.blade.php`.
+- Theme SCSS sources live in `resources/scss/`. If you want to brand colors, override variables in `resources/scss/custom/_variables.scss` and compile `resources/scss/volt.scss` via Mix (optional wiring).
+- Node 22 compatibility is ensured by pinning Webpack 5 / webpack-cli 4 and overriding a transitive dependency (rechoir) in `package.json`.
+
 [![version](https://img.shields.io/npm/v/@themesberg/volt-bootstrap-5-dashboard)](https://www.npmjs.com/package/@themesberg/volt-laravel-admin-dashboard)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![GitHub issues open](https://img.shields.io/github/issues/themesberg/volt-laravel-admin-dashboard.svg)](https://github.com/themesberg/volt-laravel-admin-dashboard/issues?q=is%3Aopen+is%3Aissue)
@@ -33,7 +81,7 @@ Whether you're working on a side project or delivering to a client, with Volt Da
 ## Detailed documentation & Gulp commands for an easy workflow
 
 
-We also included detailed documentation for every component and feature so it helps in your development workflow. Plus you will get an advanced development workflow package including Sass files and a Gulp commands file.
+We also included detailed documentation for every component and feature so it helps in your development workflow. Plus you will get an advanced development workflow package including Sass files. Note: this repository uses Laravel Mix (Webpack), not Gulp.
 
 
 ## Table of Contents

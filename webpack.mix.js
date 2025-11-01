@@ -15,3 +15,7 @@ const mix = require('laravel-mix');
  .postCss('resources/css/app.css', 'public/css', [
      //
  ]);
+ 
+ // Compile Volt SCSS (enables overriding variables in resources/scss/custom/_variables.scss)
+ mix.sass('resources/scss/volt.scss', 'public/css')
+    .options({ processCssUrls: false });
