@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:math";
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -71,7 +74,7 @@ $secondary: #fb503b !default;
 $tertiary : #31316A !default;
 
 // Series names and colors. This can be extended or customized as desired. Just add more series and colors.
-$ct-series-names: (a, b, c, d, e, f, g) !default !default;
+$ct-series-names: (a, b, c, d, e, f, g) !default;
 $ct-series-colors: (#262B40,
     #F8BD7A,
     #2CA58D,
@@ -167,105 +170,104 @@ $color-contrast-dark : $dark !default;
 $color-contrast-light: $white !default;
 
 // fusv-disable
-$blue-100: tint-color($blue, 8) !default;
-$blue-200: tint-color($blue, 6) !default;
-$blue-300: tint-color($blue, 4) !default;
-$blue-400: tint-color($blue, 2) !default;
+$blue-100: color.mix(white, $blue, 8%) !default;
+$blue-200: color.mix(white, $blue, 6%) !default;
+$blue-300: color.mix(white, $blue, 4%) !default;
+$blue-400: color.mix(white, $blue, 2%) !default;
 $blue-500: $blue !default;
-$blue-600: shade-color($blue, 2) !default;
-$blue-700: shade-color($blue, 4) !default;
-$blue-800: shade-color($blue, 6) !default;
-$blue-900: shade-color($blue, 8) !default;
+$blue-600: color.mix(black, $blue, 2%) !default;
+$blue-700: color.mix(black, $blue, 4%) !default;
+$blue-800: color.mix(black, $blue, 6%) !default;
+$blue-900: color.mix(black, $blue, 8%) !default;
 
-$indigo-100: tint-color($indigo, 8) !default;
-$indigo-200: tint-color($indigo, 6) !default;
-$indigo-300: tint-color($indigo, 4) !default;
-$indigo-400: tint-color($indigo, 2) !default;
+$indigo-100: color.mix(white, $indigo, 8%) !default;
+$indigo-300: color.mix(white, $indigo, 4%) !default;
+$indigo-400: color.mix(white, $indigo, 2%) !default;
 $indigo-500: $indigo !default;
-$indigo-600: shade-color($indigo, 2) !default;
-$indigo-700: shade-color($indigo, 4) !default;
-$indigo-800: shade-color($indigo, 6) !default;
-$indigo-900: shade-color($indigo, 8) !default;
+$indigo-600: color.mix(black, $indigo, 2%) !default;
+$indigo-700: color.mix(black, $indigo, 4%) !default;
+$indigo-800: color.mix(black, $indigo, 6%) !default;
+$indigo-900: color.mix(black, $indigo, 8%) !default;
 
-$purple-100: tint-color($purple, 8) !default;
-$purple-200: tint-color($purple, 6) !default;
-$purple-300: tint-color($purple, 4) !default;
-$purple-400: tint-color($purple, 2) !default;
+$purple-100: color.mix(white, $purple, 8%) !default;
+$purple-200: color.mix(white, $purple, 6%) !default;
+$purple-300: color.mix(white, $purple, 4%) !default;
+$purple-400: color.mix(white, $purple, 2%) !default;
 $purple-500: $purple !default;
-$purple-600: shade-color($purple, 2) !default;
-$purple-700: shade-color($purple, 4) !default;
-$purple-800: shade-color($purple, 6) !default;
-$purple-900: shade-color($purple, 8) !default;
+$purple-600: color.mix(black, $purple, 2%) !default;
+$purple-700: color.mix(black, $purple, 4%) !default;
+$purple-800: color.mix(black, $purple, 6%) !default;
+$purple-900: color.mix(black, $purple, 8%) !default;
 
-$pink-100: tint-color($pink, 8) !default;
-$pink-200: tint-color($pink, 6) !default;
-$pink-300: tint-color($pink, 4) !default;
-$pink-400: tint-color($pink, 2) !default;
+$pink-100: color.mix(white, $pink, 8%) !default;
+$pink-200: color.mix(white, $pink, 6%) !default;
+$pink-300: color.mix(white, $pink, 4%) !default;
+$pink-400: color.mix(white, $pink, 2%) !default;
 $pink-500: $pink !default;
-$pink-600: shade-color($pink, 2) !default;
-$pink-700: shade-color($pink, 4) !default;
-$pink-800: shade-color($pink, 6) !default;
-$pink-900: shade-color($pink, 8) !default;
+$pink-600: color.mix(black, $pink, 2%) !default;
+$pink-700: color.mix(black, $pink, 4%) !default;
+$pink-800: color.mix(black, $pink, 6%) !default;
+$pink-900: color.mix(black, $pink, 8%) !default;
 
-$red-100: tint-color($red, 8) !default;
-$red-200: tint-color($red, 6) !default;
-$red-300: tint-color($red, 4) !default;
-$red-400: tint-color($red, 2) !default;
+$red-100: color.mix(white, $red, 8%) !default;
+$red-200: color.mix(white, $red, 6%) !default;
+$red-300: color.mix(white, $red, 4%) !default;
+$red-400: color.mix(white, $red, 2%) !default;
 $red-500: $red !default;
-$red-600: shade-color($red, 2) !default;
-$red-700: shade-color($red, 4) !default;
-$red-800: shade-color($red, 6) !default;
-$red-900: shade-color($red, 8) !default;
+$red-600: color.mix(black, $red, 2%) !default;
+$red-700: color.mix(black, $red, 4%) !default;
+$red-800: color.mix(black, $red, 6%) !default;
+$red-900: color.mix(black, $red, 8%) !default;
 
-$orange-100: tint-color($orange, 8) !default;
-$orange-200: tint-color($orange, 6) !default;
-$orange-300: tint-color($orange, 4) !default;
-$orange-400: tint-color($orange, 2) !default;
+$orange-100: color.mix(white, $orange, 8%) !default;
+$orange-200: color.mix(white, $orange, 6%) !default;
+$orange-300: color.mix(white, $orange, 4%) !default;
+$orange-400: color.mix(white, $orange, 2%) !default;
 $orange-500: $orange !default;
-$orange-600: shade-color($orange, 2) !default;
-$orange-700: shade-color($orange, 4) !default;
-$orange-800: shade-color($orange, 6) !default;
-$orange-900: shade-color($orange, 8) !default;
+$orange-600: color.mix(black, $orange, 2%) !default;
+$orange-700: color.mix(black, $orange, 4%) !default;
+$orange-800: color.mix(black, $orange, 6%) !default;
+$orange-900: color.mix(black, $orange, 8%) !default;
 
-$yellow-100: tint-color($yellow, 8) !default;
-$yellow-200: tint-color($yellow, 6) !default;
-$yellow-300: tint-color($yellow, 4) !default;
-$yellow-400: tint-color($yellow, 2) !default;
+$yellow-100: color.mix(white, $yellow, 8%) !default;
+$yellow-200: color.mix(white, $yellow, 6%) !default;
+$yellow-300: color.mix(white, $yellow, 4%) !default;
+$yellow-400: color.mix(white, $yellow, 2%) !default;
 $yellow-500: $yellow !default;
-$yellow-600: shade-color($yellow, 2) !default;
-$yellow-700: shade-color($yellow, 4) !default;
-$yellow-800: shade-color($yellow, 6) !default;
-$yellow-900: shade-color($yellow, 8) !default;
+$yellow-600: color.mix(black, $yellow, 2%) !default;
+$yellow-700: color.mix(black, $yellow, 4%) !default;
+$yellow-800: color.mix(black, $yellow, 6%) !default;
+$yellow-900: color.mix(black, $yellow, 8%) !default;
 
-$green-100: tint-color($green, 8) !default;
-$green-200: tint-color($green, 6) !default;
-$green-300: tint-color($green, 4) !default;
-$green-400: tint-color($green, 2) !default;
+$green-100: color.mix(white, $green, 8%) !default;
+$green-200: color.mix(white, $green, 6%) !default;
+$green-300: color.mix(white, $green, 4%) !default;
+$green-400: color.mix(white, $green, 2%) !default;
 $green-500: $green !default;
-$green-600: shade-color($green, 2) !default;
-$green-700: shade-color($green, 4) !default;
-$green-800: shade-color($green, 6) !default;
-$green-900: shade-color($green, 8) !default;
+$green-600: color.mix(black, $green, 2%) !default;
+$green-700: color.mix(black, $green, 4%) !default;
+$green-800: color.mix(black, $green, 6%) !default;
+$green-900: color.mix(black, $green, 8%) !default;
 
-$teal-100: tint-color($teal, 8) !default;
-$teal-200: tint-color($teal, 6) !default;
-$teal-300: tint-color($teal, 4) !default;
-$teal-400: tint-color($teal, 2) !default;
+$teal-100: color.mix(white, $teal, 8%) !default;
+$teal-200: color.mix(white, $teal, 6%) !default;
+$teal-300: color.mix(white, $teal, 4%) !default;
+$teal-400: color.mix(white, $teal, 2%) !default;
 $teal-500: $teal !default;
-$teal-600: shade-color($teal, 2) !default;
-$teal-700: shade-color($teal, 4) !default;
-$teal-800: shade-color($teal, 6) !default;
-$teal-900: shade-color($teal, 8) !default;
+$teal-600: color.mix(black, $teal, 2%) !default;
+$teal-700: color.mix(black, $teal, 4%) !default;
+$teal-800: color.mix(black, $teal, 6%) !default;
+$teal-900: color.mix(black, $teal, 8%) !default;
 
-$cyan-100: tint-color($cyan, 8) !default;
-$cyan-200: tint-color($cyan, 6) !default;
-$cyan-300: tint-color($cyan, 4) !default;
-$cyan-400: tint-color($cyan, 2) !default;
+$cyan-100: color.mix(white, $cyan, 8%) !default;
+$cyan-200: color.mix(white, $cyan, 6%) !default;
+$cyan-300: color.mix(white, $cyan, 4%) !default;
+$cyan-400: color.mix(white, $cyan, 2%) !default;
 $cyan-500: $cyan !default;
-$cyan-600: shade-color($cyan, 2) !default;
-$cyan-700: shade-color($cyan, 4) !default;
-$cyan-800: shade-color($cyan, 6) !default;
-$cyan-900: shade-color($cyan, 8) !default;
+$cyan-600: color.mix(black, $cyan, 2%) !default;
+$cyan-700: color.mix(black, $cyan, 4%) !default;
+$cyan-800: color.mix(black, $cyan, 6%) !default;
+$cyan-900: color.mix(black, $cyan, 8%) !default;
 // fusv-enable
 
 // Characters which are escaped by the escape-svg function
@@ -308,8 +310,8 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 
 $spacer: 1rem !default;
 $spacers: (0: 0,
-    1: $spacer / 4,
-    2: $spacer / 2,
+    1: math.div($spacer, 4),
+    2: math.div($spacer, 2),
     3: $spacer,
     4: $spacer * 1.5,
     5: $spacer * 3,
@@ -342,7 +344,7 @@ $body-text-align: null !default;
 
 $link-color                             : $primary !default;
 $link-decoration                        : none !default;
-$link-hover-color                       : darken($link-color, 50%) !default;
+$link-hover-color                       : color.adjust($link-color, $lightness: -50%) !default;
 $link-hover-decoration                  : none !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 10% !default;
@@ -501,7 +503,7 @@ $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
-$headings-margin-bottom: $spacer / 2 !default;
+$headings-margin-bottom: math.div($spacer, 2) !default;
 $headings-font-family  : null !default;
 $headings-font-style   : null !default;
 $headings-font-weight  : $font-weight-bold !default;
@@ -638,17 +640,17 @@ $accordion-button-padding-x   : $accordion-padding-x !default;
 $accordion-button-color       : $accordion-color !default;
 $accordion-button-bg          : $accordion-bg !default;
 $accordion-button-active-bg   : $light !default;
-$accordion-button-active-color: shade-color($primary, 10%) !default;
+$accordion-button-active-color: color.adjust($primary, $lightness: -10%) !default;
 
 
-$accordion-icon-width       : 1.25rem !default !default;
-$accordion-icon-color       : $accordion-color !default !default;
-$accordion-icon-active-color: $accordion-button-active-color !default !default;
-$accordion-icon-transition  : transform .2s ease-in-out !default !default;
-$accordion-icon-transform   : rotate(180deg) !default !default;
+$accordion-icon-width       : 1.25rem !default;
+$accordion-icon-color       : $accordion-color !default;
+$accordion-icon-active-color: $accordion-button-active-color !default;
+$accordion-icon-transition  : transform .2s ease-in-out !default;
+$accordion-icon-transform   : rotate(180deg) !default;
 
-$accordion-button-icon       : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default !default;
-$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default !default;
+$accordion-button-icon       : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
 
 // Buttons + Forms
 //
@@ -784,7 +786,7 @@ $input-border-radius-sm: $border-radius !default;
 $input-border-radius-lg: $border-radius !default;
 
 $input-focus-bg          : $input-bg !default;
-$input-focus-border-color: lighten($component-active-bg, 25%) !default;
+$input-focus-border-color: color.adjust($component-active-bg, $lightness: 25%) !default;
 $input-focus-color       : $input-color !default;
 $input-focus-width       : $input-btn-focus-width !default;
 $input-focus-box-shadow  : $input-btn-focus-box-shadow !default;
@@ -796,7 +798,7 @@ $input-height-border: $input-border-width * 2 !default;
 
 $input-height-inner        : add($input-line-height * 1em, $input-padding-y * 2) !default;
 $input-height-inner-half   : add($input-line-height * .5em, $input-padding-y) !default;
-$input-height-inner-quarter: add($input-line-height * .25em, $input-padding-y / 2) !default;
+$input-height-inner-quarter: add($input-line-height * .25em, math.div($input-padding-y, 2)) !default;
 
 $input-height   : add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false)) !default;
 $input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
@@ -975,7 +977,7 @@ $form-range-thumb-box-shadow   : 0 .1rem .25rem rgba($black, .1) !default;
 $form-range-thumb-focus-box-shadow: 0 0 0 1px $body-bg,
 $input-focus-box-shadow !default;
 $form-range-thumb-focus-box-shadow-width: $input-focus-width !default; // For focus box shadow issue in Edge
-$form-range-thumb-active-bg             : lighten($component-active-bg, 35%) !default;
+$form-range-thumb-active-bg             : color.adjust($component-active-bg, $lightness: 35%) !default;
 $form-range-thumb-disabled-bg           : $gray-500 !default;
 $form-range-thumb-transition            : background-color .15s ease-in-out,
 border-color .15s ease-in-out,
@@ -1187,11 +1189,11 @@ $dropdown-border-radius      : $border-radius-sm !default;
 $dropdown-border-width       : $border-width !default;
 $dropdown-inner-border-radius: subtract($dropdown-border-radius, $dropdown-border-width) !default;
 $dropdown-divider-bg         : $gray-200 !default;
-$dropdown-divider-margin-y   : $spacer / 2 !default;
+$dropdown-divider-margin-y   : math.div($spacer, 2) !default;
 $dropdown-box-shadow         : 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
 
 $dropdown-link-color      : $gray-900 !default;
-$dropdown-link-hover-color: darken($gray-900, 5%) !default;
+$dropdown-link-hover-color: color.adjust($gray-900, $lightness: -5%) !default;
 $dropdown-link-hover-bg   : $gray-100 !default;
 
 $dropdown-link-active-color: $gray-900 !default;
@@ -1199,7 +1201,7 @@ $dropdown-link-active-bg   : $gray-200 !default;
 
 $dropdown-link-disabled-color: $gray-600 !default;
 
-$dropdown-item-padding-y: $spacer / 4 !default;
+$dropdown-item-padding-y: math.div($spacer, 4) !default;
 $dropdown-item-padding-x: $spacer !default;
 
 $dropdown-header-color      : $gray-900 !default;
@@ -1259,7 +1261,7 @@ $card-bg                 : $white !default;
 
 $card-img-overlay-padding: $spacer !default;
 
-$card-group-margin     : $grid-gutter-width / 2 !default;
+$card-group-margin     : math.div($grid-gutter-width, 2) !default;
 $transition-bezier-card: cubic-bezier(0.34, 1.45, 0.7, 1) !default;
 
 //Timelines
@@ -1335,7 +1337,7 @@ $popover-border-radius      : $border-radius-lg !default;
 $popover-inner-border-radius: subtract($popover-border-radius, $popover-border-width) !default;
 $popover-box-shadow         : $box-shadow !default;
 
-$popover-header-bg       : darken($popover-bg, 3%) !default;
+$popover-header-bg       : color.adjust($popover-bg, $lightness: -3%) !default;
 $popover-header-color    : $headings-color !default;
 $popover-header-padding-y: .5rem !default;
 $popover-header-padding-x: $spacer !default;
@@ -1348,7 +1350,7 @@ $popover-arrow-width : 1rem !default;
 $popover-arrow-height: .5rem !default;
 $popover-arrow-color : $popover-bg !default;
 
-$popover-arrow-outer-color: fade-in($popover-border-color, .05) !default;
+$popover-arrow-outer-color: color.adjust($popover-border-color, $alpha: 0.05) !default;
 
 
 // Toasts
@@ -1440,9 +1442,9 @@ $alert-border-width    : $border-width !default;
 $alert-icon-font-size  : 2rem !default;
 $alert-link-color      : $white !default;
 
-$alert-bg-level    : -10 !default !default;
-$alert-border-level: -9 !default !default;
-$alert-color-level : 10 !default !default;
+$alert-bg-level    : -10 !default;
+$alert-border-level: -9 !default;
+$alert-color-level : 10 !default;
 
 
 // Progress bars
@@ -1473,7 +1475,7 @@ $list-group-border-radius: $border-radius !default;
 $list-group-sm-item-padding-y: .625rem !default;
 $list-group-sm-item-padding-x: .875rem !default;
 
-$list-group-item-padding-y    : $spacer / 2 !default;
+$list-group-item-padding-y    : math.div($spacer, 2) !default;
 $list-group-item-padding-x    : $spacer !default;
 $list-group-item-bg-level     : -9 !default;
 $list-group-item-color-level  : 6 !default;
@@ -1512,7 +1514,7 @@ $figure-caption-color    : $gray-600 !default;
 // Breadcrumbs
 
 $breadcrumb-font-size     : null !default;
-$breadcrumb-padding-y     : $spacer / 2 !default;
+$breadcrumb-padding-y     : math.div($spacer, 2) !default;
 $breadcrumb-padding-x     : $spacer !default;
 $breadcrumb-item-padding-x: .5rem !default;
 $breadcrumb-margin-bottom : 1rem !default;
@@ -1578,7 +1580,7 @@ $datepicker-border-radius   : $border-radius-sm !default;
 $datepicker-dropdown-padding: 20px 22px !default;
 
 $datepicker-cell-transition      : $transition-base !default;
-$datepicker-cell-hover-background: lighten($gray-400, 55%) !default;
+$datepicker-cell-hover-background: color.adjust($gray-400, $lightness: 55%) !default;
 $datepicker-cell-border-radius   : 50% !default;
 $datepicker-cell-width           : 36px !default;
 $datepicker-cell-height          : 36px !default;
@@ -1593,11 +1595,11 @@ $datepicker-active-background: $secondary !default;
 $datepicker-active-box-shadow: none !default;
 
 $datepicker-range-background             : $secondary !default;
-$datepicker-range-cell-focused-background: darken($datepicker-range-background, 5%) !default;
+$datepicker-range-cell-focused-background: color.adjust($datepicker-range-background, $lightness: -5%) !default;
 $datepicker-range-color                  : $white !default;
 $datepicker-range-highlighted-bg         : $gray-200 !default;
 
-$datepicker-dropdown-border: lighten($gray-400, 40%) !default;
+$datepicker-dropdown-border: color.adjust($gray-400, $lightness: 40%) !default;
 $datepicker-dropdown-bg    : $white !default;
 $datepicker-highlighted-bg : $datepicker-active-background !default;
 

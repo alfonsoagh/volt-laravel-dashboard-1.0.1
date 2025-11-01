@@ -23,9 +23,9 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "volt/variables";
 
-// Third party
-@import '../../node_modules/vanillajs-datepicker/sass/datepicker.scss';
-@import "../../node_modules/chartist/dist/scss/chartist.scss";
+// Third party (use compiled CSS to avoid Sass warnings from vendor SCSS)
+@import "../../node_modules/vanillajs-datepicker/dist/css/datepicker.css";
+@import "../../node_modules/chartist/dist/chartist.css";
 
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/variables";
