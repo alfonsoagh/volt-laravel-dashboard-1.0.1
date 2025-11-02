@@ -51,6 +51,17 @@
     width: $avatar-xl-y;
     height: $avatar-xl-x;
 
+    img {
+        width: $avatar-xl-y;
+        height: $avatar-xl-x;
+        object-fit: cover;
+
+        @include media-breakpoint-down(lg) {
+            width: $avatar-lg-y;
+            height: $avatar-lg-x;
+        }
+    }
+
     @include media-breakpoint-down(lg) {
         width: $avatar-lg-y;
         height: $avatar-lg-x;

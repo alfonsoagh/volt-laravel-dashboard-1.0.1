@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /*
 * = Buttons
 */
@@ -52,6 +54,22 @@
     }
 }
 
+// Fix Bootstrap 5 auto-contrast for primary button (force dark bg, light text)
+.btn-primary {
+    --bs-btn-color: #{$white};
+    --bs-btn-bg: #{$primary};
+    --bs-btn-border-color: #{$primary};
+    --bs-btn-hover-color: #{$white};
+    --bs-btn-hover-bg: #{color.adjust($primary, $lightness: -5%)};
+    --bs-btn-hover-border-color: #{color.adjust($primary, $lightness: -5%)};
+    --bs-btn-active-color: #{$white};
+    --bs-btn-active-bg: #{color.adjust($primary, $lightness: -10%)};
+    --bs-btn-active-border-color: #{color.adjust($primary, $lightness: -10%)};
+    --bs-btn-disabled-color: #{$white};
+    --bs-btn-disabled-bg: #{$primary};
+    --bs-btn-disabled-border-color: #{$primary};
+}
+
 // Fix for darken background color
 @each $color, $value in $theme-colors {
     .btn-#{$color} {
@@ -59,7 +77,7 @@
            background-color:  darken( $value, 5% );
            border-color: darken( $value, 5% );
         }
-    }   
+    }
 }
 
 // Brand (social) buttons 

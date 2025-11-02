@@ -75,13 +75,13 @@ $tertiary : #31316A !default;
 
 // Series names and colors. This can be extended or customized as desired. Just add more series and colors.
 $ct-series-names: (a, b, c, d, e, f, g) !default;
-$ct-series-colors: (#262B40,
-    #F8BD7A,
+$ct-series-colors: ($primary,
+    $secondary,
     #2CA58D,
     #31316A,
     #C96480,
     #ffffff,
-    #F8BD7A,
+    $secondary,
 
 ) !default;
 

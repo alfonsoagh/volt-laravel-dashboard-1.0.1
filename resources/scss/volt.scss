@@ -25,7 +25,8 @@
 
 // Third party (use compiled CSS to avoid Sass warnings from vendor SCSS)
 @import "../../node_modules/vanillajs-datepicker/dist/css/datepicker.css";
-@import "../../node_modules/chartist/dist/chartist.css";
+// Import Chartist SCSS (not CSS) to use custom $ct-series-colors from volt/variables
+@import "../../node_modules/chartist/dist/scss/chartist";
 
 // Bootstrap
 @import "../../node_modules/bootstrap/scss/variables";
