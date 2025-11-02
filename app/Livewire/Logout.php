@@ -9,7 +9,7 @@ class Logout extends Component
 
     public function logout() {
         auth()->logout();
-        return redirect('/login');
+        return redirect()->route(config('proj.route_name_prefix', 'proj') . '.auth.login');
     }
     public function render()
     {

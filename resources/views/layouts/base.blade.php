@@ -1,6 +1,8 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@yield('title', config('app.name'))</title>
     @if(env('IS_DEMO')) 
         <link rel="canonical" href="https://themesberg.com/product/laravel/volt-admin-dashboard-template">
         <meta  name="keywords" content="themesberg, updivision, html dashboard, laravel, livewire, laravel livewire, alpine.js, html css dashboard laravel, Volt Laravel Admin Dashboard, livewire volt dashboard, volt admin, livewire dashboard, livewire admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, volt dashboard bootstrap 5 laravel, frontend, responsive bootstrap 5 dashboard, volt dashboard, volt laravel bootstrap 5 dashboard"></meta>
@@ -24,78 +26,77 @@
     @endif
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="../../assets/img/favicon/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="../../assets/img/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="../../assets/img/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}" sizes="180x180">
+    <link rel="icon" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}" sizes="16x16" type="image/png">
 
-    <link rel="mask-icon" href="../../assets/img/favicon/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="../../assets/img/favicon/favicon.ico">
-    <meta name="msapplication-config" content="../../assets/img/favicons/browserconfig.xml">
+    <link rel="mask-icon" href="{{ asset('assets/img/favicon/safari-pinned-tab.svg') }}" color="#563d7c">
+    <link rel="icon" href="{{ asset('assets/img/favicon/favicon.ico') }}">
+    <meta name="msapplication-config" content="{{ asset('assets/img/favicons/browserconfig.xml') }}">
     <meta name="theme-color" content="#563d7c">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     
     <!-- Apex Charts -->
-    <link type="text/css" href="/vendor/apexcharts/apexcharts.css" rel="stylesheet">
-    
+    <link type="text/css" href="{{ asset('vendor/apexcharts/apexcharts.css') }}" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Datepicker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css">
 
     <!-- Fontawesome -->
-    <link type="text/css" href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    
+    <link type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
     <!-- Sweet Alert -->
-    <link type="text/css" href="/vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-    
+    <link type="text/css" href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
+
     <!-- Notyf -->
-    <link type="text/css" href="/vendor/notyf/notyf.min.css" rel="stylesheet">
-    
+    <link type="text/css" href="{{ asset('vendor/notyf/notyf.min.css') }}" rel="stylesheet">
+
     <!-- Volt CSS -->
-    <link type="text/css" href="/css/volt.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('css/volt.css') }}" rel="stylesheet">
 
     @livewireStyles
-
     @livewireScripts
 
     <!-- Core -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Vendor JS -->
-    <script src="/assets/js/on-screen.umd.min.js"></script>
+    <script src="{{ asset('assets/js/on-screen.umd.min.js') }}"></script>
 
     <!-- Slider -->
-    <script src="/assets/js/nouislider.min.js"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
 
     <!-- Smooth scroll -->
-    <script src="/assets/js/smooth-scroll.polyfills.min.js"></script>
+    <script src="{{ asset('assets/js/smooth-scroll.polyfills.min.js') }}"></script>
 
     <!-- Apex Charts -->
-    <script src="/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ asset('vendor/apexcharts/apexcharts.min.js') }}"></script>
 
     <!-- Charts -->
-    <script src="/assets/js/chartist.min.js"></script>
-    <script src="/assets/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{ asset('assets/js/chartist.min.js') }}"></script>
+    <script src="{{ asset('assets/js/chartist-plugin-tooltip.min.js') }}"></script>
 
     <!-- Datepicker -->
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker.min.js"></script>
 
     <!-- Sweet Alerts 2 -->
-    <script src="/assets/js/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"></script>
 
     <!-- Moment JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
     <!-- Notyf -->
-    <script src="/vendor/notyf/notyf.min.js"></script>
+    <script src="{{ asset('vendor/notyf/notyf.min.js') }}"></script>
 
     <!-- Simplebar -->
-    <script src="/assets/js/simplebar.min.js"></script>
+    <script src="{{ asset('assets/js/simplebar.min.js') }}"></script>
 
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    
+
     <!-- Volt JS -->
-    <script src="/assets/js/volt.js"></script>
+    <script src="{{ asset('assets/js/volt.js') }}"></script>
 
     @if(env('IS_DEMO')) 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -128,9 +129,19 @@
             style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     @endif
+    {{--
+        Nota: Este layout soporta tanto slots de componentes Blade como secciones.
+        Para migración progresiva: si existe la sección 'content', se usa; de lo contrario, se usa $slot.
+        Opcional prefijo de componentes Blade: <x-proj-layouts.base> (sustituir 'proj' por el código real del proyecto).
+    --}}
 
-    {{ $slot }}
+    @hasSection('content')
+        @yield('content')
+    @else
+        {{ $slot }}
+    @endif
 
+    @yield('scripts')
 </body>
 
 </html>

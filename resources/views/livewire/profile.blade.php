@@ -1,5 +1,7 @@
-<div>
-{{-- <title>Volt Laravel Dashboard - Profile</title> --}}
+ 
+{{-- Nota Livewire: esta vista debe tener UN único elemento raíz --}}
+{{-- El layout se aplica desde el componente con ->layout('layouts.app') --}}
+
 <div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
         <div>
@@ -224,9 +226,9 @@
                 <div class="col-12 mb-4">
                     <div class="card shadow border-0 text-center p-0">
                         <div wire:ignore.self class="profile-cover rounded-top"
-                            data-background="../assets/img/profile-cover.jpg"></div>
+                            data-background="{{ asset('assets/img/profile-cover.jpg') }}"></div>
                         <div class="card-body pb-5">
-                            <img src="../assets/img/team/profile-picture-1.jpg"
+                            <img src="{{ asset('assets/img/team/profile-picture-1.jpg') }}"
                                 class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
                             <h4 class="h3">
                                 {{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}
@@ -249,5 +251,6 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+    </div>
 </div>

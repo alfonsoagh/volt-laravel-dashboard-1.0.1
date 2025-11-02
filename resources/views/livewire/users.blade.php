@@ -1,6 +1,10 @@
+ 
+{{-- Nota Livewire: esta vista debe tener UN único elemento raíz --}}
+{{-- El layout se aplica desde el componente con ->layout('layouts.app') --}}
+
 <div>
-{{-- <title>Volt Laravel Dashboard - User management</title> --}}
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    {{-- <title>Volt Laravel Dashboard - User management</title> --}}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
     <div class="d-block mb-4 mb-md-0">
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -35,8 +39,8 @@
             <button type="button" class="btn btn-sm btn-outline-gray-600">Export</button>
         </div>
     </div>
-</div>
-<div class="table-settings mb-4">
+    </div>
+    <div class="table-settings mb-4">
     <div class="row justify-content-between align-items-center">
         <div class="col-9 col-lg-8 d-md-flex">
             <div class="input-group me-2 me-lg-3 fmxw-300">
@@ -154,7 +158,7 @@
                 </td>
                 <td>
                     <a href="#" class="d-flex align-items-center">
-                        <img src="../assets/img/team/profile-picture-1.jpg" class="avatar rounded-circle me-3"
+                        <img src="{{ asset('assets/img/team/profile-picture-1.jpg') }}" class="avatar rounded-circle me-3"
                             alt="Avatar">
                         <div class="d-block">
                             <span class="fw-bold">Admin</span>
@@ -192,5 +196,86 @@
             </tr>
         </tbody>
     </table>
-</div>
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Add, Edit, Delete features are not functional. This is a PRO feature! Click <a
+            href="https://volt-pro-laravel-admin-dashboard.updivision.com/" target="_blank">here</a> to see the PRO product.
+    </div>
+    <div class="card card-body shadow border-0 table-wrapper table-responsive">
+        <div class="d-flex mb-3">
+            <select class="form-select fmxw-200" aria-label="Message select example">
+                <option selected>Bulk Action</option>
+                <option value="1">Send Email</option>
+                <option value="2">Change Group</option>
+                <option value="3">Delete User</option>
+            </select>
+            <button class="btn btn-sm px-3 btn-secondary ms-3">Apply</button>
+        </div>
+        <table class="table user-table table-hover align-items-center">
+            <thead>
+                <tr>
+                    <th class="border-bottom">
+                        <div class="form-check dashboard-check">
+                            <input class="form-check-input" type="checkbox" value="" id="userCheck55">
+                            <label class="form-check-label" for="userCheck55">
+                            </label>
+                        </div>
+                    </th>
+                    <th class="border-bottom">Name</th>
+                    <th class="border-bottom">Role</th>
+                    <th class="border-bottom">Date Created</th>
+                    <th class="border-bottom">Status</th>
+                    <th class="border-bottom">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-check dashboard-check">
+                            <input class="form-check-input" type="checkbox" value="" id="userCheck1">
+                            <label class="form-check-label" for="userCheck1">
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="{{ asset('assets/img/team/profile-picture-1.jpg') }}" class="avatar rounded-circle me-3"
+                                alt="Avatar">
+                            <div class="d-block">
+                                <span class="fw-bold">Admin</span>
+                                <div class="small text-gray">admin@volt.com</div>
+                            </div>
+                        </a>
+                    </td>
+                    <td><span class="fw-normal">Admin</span></td>
+                    <td><span class="fw-normal d-flex align-items-center">15 Jun 2021</span></td>
+                    <td><span class="fw-normal text-success">Active</span></td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                                    </path>
+                                </svg>
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <span class="fas fa-user-shield me-2"></span>
+                                    View Details
+                                </a>
+                                <a class="dropdown-item text-danger d-flex align-items-center" href="#">
+                                    <span class="fas fa-user-times me-2"></span>
+                                    Delete user
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

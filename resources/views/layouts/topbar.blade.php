@@ -1,3 +1,4 @@
+ 
 <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -39,7 +40,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <img alt="Image placeholder" src="/assets/img/team/profile-picture-1.jpg" class="avatar-md rounded">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-1.jpg') }}" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -58,7 +59,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <img alt="Image placeholder" src="/assets/img/team/profile-picture-2.jpg" class="avatar-md rounded">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-2.jpg') }}" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -77,7 +78,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <img alt="Image placeholder" src="/assets/img/team/profile-picture-3.jpg" class="avatar-md rounded">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-3.jpg') }}" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 m-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -96,7 +97,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <img alt="Image placeholder" src="/assets/img/team/profile-picture-4.jpg" class="avatar-md rounded">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-4.jpg') }}" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -115,7 +116,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <img alt="Image placeholder" src="/assets/img/team/profile-picture-5.jpg" class="avatar-md rounded">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-5.jpg') }}" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
                     <div class="d-flex justify-content-between align-items-center">
@@ -148,7 +149,7 @@
           <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <div class="media d-flex align-items-center">
-              <img class="avatar rounded-circle" alt="Image placeholder" src="/assets/img/team/profile-picture-1.jpg">
+              <img class="avatar rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/team/profile-picture-1.jpg') }}">
               <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                 <span
                   class="mb-0 font-small fw-bold text-gray-900">{{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}</span>
@@ -156,7 +157,7 @@
             </div>
           </a>
           <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
-            <a class="dropdown-item d-flex align-items-center" href="/profile">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route(config('proj.route_name_prefix', 'proj') . '.profile.index') }}">
               <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"

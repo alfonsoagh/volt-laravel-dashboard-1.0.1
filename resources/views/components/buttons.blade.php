@@ -1,5 +1,5 @@
+ 
 <div>
-{{-- <title>Volt Laravel Dashboard - Buttons</title> --}}
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -21,8 +21,7 @@
             <a href="/documentation/components/buttons/index.html" class="btn btn-outline-gray" target="_blank"><i class="far fa-question-circle me-1"></i> Buttons Docs</a>
         </div>
     </div>
-</div>
-
+    </div>
 <div class="row">
     <div class="col-12 mb-4">
         <div class="card border-light shadow-sm components-section">
@@ -248,6 +247,6 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
-</div>
 </div>

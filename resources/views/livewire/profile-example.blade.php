@@ -1,3 +1,4 @@
+ 
 <div>
 {{-- <title>Volt Laravel Dashboard - Profile</title> --}}
 <div>
@@ -272,9 +273,9 @@
                 <div class="col-12 mb-4">
                     <div class="card shadow border-0 text-center p-0">
                         <div class="profile-cover rounded-top"
-                            data-background="../assets/img/profile-cover.jpg"></div>
+                            data-background="{{ asset('assets/img/profile-cover.jpg') }}"></div>
                         <div class="card-body pb-5">
-                            <img src="../assets/img/team/profile-picture-1.jpg"
+                            <img src="{{ asset('assets/img/team/profile-picture-1.jpg') }}"
                                 class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
                             <h4 class="h3">User Name</h4>
                             <h5 class="fw-normal">Senior Software Engineer</h5>
@@ -298,7 +299,7 @@
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <!-- Avatar -->
-                                <img class="rounded avatar-xl" src="../assets/img/team/profile-picture-1.jpg"
+                                <img class="rounded avatar-xl" src="{{ asset('assets/img/team/profile-picture-1.jpg') }}"
                                     alt="change avatar">
                             </div>
                             <div class="file-field">
@@ -327,7 +328,7 @@
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <!-- Avatar -->
-                                <img class="rounded avatar-xl" src="../assets/img/profile-cover.jpg" alt="change cover">
+                                <img class="rounded avatar-xl" src="{{ asset('assets/img/profile-cover.jpg') }}" alt="change cover">
                             </div>
                             <div class="file-field">
                                 <div class="d-flex justify-content-xl-center ms-xl-3">

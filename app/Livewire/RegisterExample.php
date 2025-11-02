@@ -8,6 +8,6 @@ class RegisterExample extends Component
 {
     public function render()
     {
-        return view('livewire.register-example');
+        return view('livewire.register-example')->layout('layouts.app');
     }
 }

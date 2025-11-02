@@ -23,7 +23,7 @@ class Register extends Component
     public function mount()
     {
         if (auth()->user()) {
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route(config('proj.route_name_prefix', 'proj') . '.dashboard.index'));
         }
     }
 
@@ -44,11 +44,11 @@ class Register extends Component
 
         auth()->login($user);
 
-        return redirect('/profile');
+        return redirect()->intended(route(config('proj.route_name_prefix', 'proj') . '.profile.index'));
     }
 
     public function render()
     {
-        return view('livewire.auth.register');
+        return view('livewire.auth.register')->layout('layouts.app');
     }
 }

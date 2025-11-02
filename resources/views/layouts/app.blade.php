@@ -1,33 +1,60 @@
-<x-layouts.base>
+ 
+@extends('layouts.base')
 
+@section('content')
+    @php($routeName = request()->route()?->getName())
+    @php($isAppShell = in_array($routeName, [
+        // Rutas app principales con navegación completa
+        'proj.dashboard.index', 'proj.profile.index', 'proj.profile.example', 'proj.users.index',
+        'proj.ui.bootstrap-tables', 'proj.billing.transactions', 'proj.ui.buttons', 'proj.ui.forms',
+        'proj.ui.modals', 'proj.ui.notifications', 'proj.ui.typography', 'proj.marketing.upgrade-to-pro',
+    ]))
+    @php($isAuthShell = in_array($routeName, [
+        // Rutas de autenticación/landing
+        'proj.auth.register', 'proj.examples.register', 'proj.auth.login', 'proj.examples.login',
+        'proj.auth.forgot-password', 'proj.examples.forgot-password', 'proj.auth.reset-password', 'proj.examples.reset-password',
+    ]))
+    @php($isMinimalShell = in_array($routeName, [
+        // Páginas minimalistas
+        'proj.errors.404', 'proj.errors.500', 'proj.auth.lock',
+    ]))
 
-    @if(in_array(request()->route()->getName(), ['dashboard', 'profile', 'profile-example', 'users', 'bootstrap-tables', 'transactions',
-    'buttons',
-    'forms', 'modals', 'notifications', 'typography', 'upgrade-to-pro']))
-
-    {{-- Nav --}}
-    @include('layouts.nav')
-    {{-- SideNav --}}
-    @include('layouts.sidenav')
-    <main class="content">
-        {{-- TopBar --}}
-        @include('layouts.topbar')
-        {{ $slot }}
-        {{-- Footer --}}
-        @include('layouts.footer')
-    </main>
-
-    @elseif(in_array(request()->route()->getName(), ['register', 'register-example', 'login', 'login-example',
-    'forgot-password', 'forgot-password-example', 'reset-password','reset-password-example']))
-
-    {{ $slot }}
-    {{-- Footer --}}
-    @include('layouts.footer2')
-
-
-    @elseif(in_array(request()->route()->getName(), ['404', '500', 'lock']))
-
-    {{ $slot }}
-
+    @if($isAppShell)
+        {{-- Nav --}}
+        @include('layouts.nav')
+        {{-- SideNav --}}
+        @include('layouts.sidenav')
+        <main class="content">
+            {{-- TopBar --}}
+            @include('layouts.topbar')
+            @hasSection('page')
+                @yield('page')
+            @else
+                {{ $slot ?? '' }}
+            @endif
+            {{-- Footer --}}
+            @include('layouts.footer')
+        </main>
+    @elseif($isAuthShell)
+        @hasSection('page')
+            @yield('page')
+        @else
+            {{ $slot ?? '' }}
+        @endif
+        {{-- Footer alternativo --}}
+        @include('layouts.footer2')
+    @elseif($isMinimalShell)
+        @hasSection('page')
+            @yield('page')
+        @else
+            {{ $slot ?? '' }}
+        @endif
+    @else
+        {{-- Fallback: contenido plano --}}
+        @hasSection('page')
+            @yield('page')
+        @else
+            {{ $slot ?? '' }}
+        @endif
     @endif
-</x-layouts.base>
+@endsection

@@ -1,3 +1,4 @@
+ 
 <div>
 {{-- <title>Volt Laravel Dashboard - Forms</title> --}}
 <div class="py-4">
@@ -21,8 +22,6 @@
             <a href="/documentation/components/forms/index.html" class="btn btn-outline-gray" target="_blank"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
         </div>
     </div>
-</div>
-
 <div class="row">
     <div class="col-12 mb-4">
         <div class="card border-0 shadow components-section">
@@ -207,5 +206,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 </div>

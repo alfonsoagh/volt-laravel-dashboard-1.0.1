@@ -1,3 +1,4 @@
+ 
 <div>
 {{-- <title>Volt Laravel Dashboard - Bootstrap tables</title> --}}
 <div class="py-4">
@@ -25,7 +26,6 @@
         </div>
     </div>
 </div>
-
 <div class="card border-0 shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">
@@ -245,7 +245,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/united-states-of-america.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/united-states-of-america.svg') }}">
                                 <div><span class="h6">United States</span></div>
                             </a>
                         </td>
@@ -278,7 +278,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/canada.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/canada.svg') }}">
                                 <div><span class="h6">Canada</span></div>
                             </a>
                         </td>
@@ -311,7 +311,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/united-kingdom.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/united-kingdom.svg') }}">
                                 <div><span class="h6">United Kingdom</span></div>
                             </a>
                         </td>
@@ -344,7 +344,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/france.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/france.svg') }}">
                                 <div><span class="h6">France</span></div>
                             </a>
                         </td>
@@ -380,7 +380,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/japan.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/japan.svg') }}">
                                 <div><span class="h6">Japan</span></div>
                             </a>
                         </td>
@@ -416,7 +416,7 @@
                     <tr>
                         <td class="border-0">                                             
                             <a href="#" class="d-flex align-items-center">
-                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="../../assets/img/flags/germany.svg">
+                                <img class="me-2 image image-small rounded-circle" alt="Image placeholder" src="{{ asset('assets/img/flags/germany.svg') }}">
                                 <div><span class="h6">Germany</span></div>
                             </a>
                         </td>
@@ -451,5 +451,5 @@
             </table>
         </div>
     </div>
-</div>
+
 </div>

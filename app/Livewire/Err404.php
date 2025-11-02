@@ -8,6 +8,6 @@ class Err404 extends Component
 {
     public function render()
     {
-        return view('404');
+        return view('404')->layout('layouts.app');
     }
 }

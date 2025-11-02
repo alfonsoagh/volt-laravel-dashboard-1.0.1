@@ -23,7 +23,7 @@ class ForgotPassword extends Component
     public function mount()
     {
         if (auth()->user()) {
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route(config('proj.route_name_prefix', 'proj') . '.dashboard.index'));
         }
     }
 
@@ -48,6 +48,6 @@ class ForgotPassword extends Component
 
     public function render()
     {
-        return view('livewire.forgot-password');
+        return view('livewire.forgot-password')->layout('layouts.app');
     }
 }

@@ -1,3 +1,4 @@
+ 
 <div>
 {{-- <title>Volt Laravel Dashboard - Transactions</title> --}}
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -400,5 +401,6 @@
         </nav>
         <div class="fw-normal small mt-4 mt-lg-0">Showing <b>5</b> out of <b>25</b> entries</div>
     </div>
+
 </div>
 </div>

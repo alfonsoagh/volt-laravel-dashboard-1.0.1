@@ -8,6 +8,6 @@ class Transactions extends Component
 {
     public function render()
     {
-        return view('transactions');
+        return view('transactions')->layout('layouts.app');
     }
 }

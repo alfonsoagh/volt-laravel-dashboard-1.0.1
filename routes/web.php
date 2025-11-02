@@ -37,35 +37,44 @@ use App\Livewire\Users;
 |
 */
 
-Route::redirect('/', '/login');
+// Prefijo configurable del proyecto: /p/<slug>
+$slug = config('proj.slug');
+$namePrefix = config('proj.route_name_prefix', 'proj');
 
-Route::get('/register', Register::class)->name('register');
+// Redirección base a login dentro del prefijo
+Route::redirect('/', "/p/{$slug}/login");
 
-Route::get('/login', Login::class)->name('login');
+Route::prefix("p/{$slug}")
+    ->as($namePrefix . '.')
+    ->group(function () use ($namePrefix) {
+        // Público
+        Route::get('/register', Register::class)->name('auth.register');
+        Route::get('/login', Login::class)->name('auth.login');
+        Route::get('/forgot-password', ForgotPassword::class)->name('auth.forgot-password');
+        Route::get('/reset-password/{id}', ResetPassword::class)->name('auth.reset-password')->middleware('signed');
 
-Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
+        // Errores y páginas informativas
+        Route::get('/404', Err404::class)->name('errors.404');
+        Route::get('/500', Err500::class)->name('errors.500');
+        Route::get('/upgrade-to-pro', UpgradeToPro::class)->name('marketing.upgrade-to-pro');
 
-Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')->middleware('signed');
-
-Route::get('/404', Err404::class)->name('404');
-Route::get('/500', Err500::class)->name('500');
-Route::get('/upgrade-to-pro', UpgradeToPro::class)->name('upgrade-to-pro');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', Profile::class)->name('profile');
-    Route::get('/profile-example', ProfileExample::class)->name('profile-example');
-    Route::get('/users', Users::class)->name('users');
-    Route::get('/login-example', LoginExample::class)->name('login-example');
-    Route::get('/register-example', RegisterExample::class)->name('register-example');
-    Route::get('/forgot-password-example', ForgotPasswordExample::class)->name('forgot-password-example');
-    Route::get('/reset-password-example', ResetPasswordExample::class)->name('reset-password-example');
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/transactions', Transactions::class)->name('transactions');
-    Route::get('/bootstrap-tables', BootstrapTables::class)->name('bootstrap-tables');
-    Route::get('/lock', Lock::class)->name('lock');
-    Route::get('/buttons', Buttons::class)->name('buttons');
-    Route::get('/notifications', Notifications::class)->name('notifications');
-    Route::get('/forms', Forms::class)->name('forms');
-    Route::get('/modals', Modals::class)->name('modals');
-    Route::get('/typography', Typography::class)->name('typography');
-});
+        // Privado
+        Route::middleware('auth')->group(function () {
+            Route::get('/dashboard', Dashboard::class)->name('dashboard.index');
+            Route::get('/profile', Profile::class)->name('profile.index');
+            Route::get('/profile-example', ProfileExample::class)->name('profile.example');
+            Route::get('/users', Users::class)->name('users.index');
+            Route::get('/login-example', LoginExample::class)->name('examples.login');
+            Route::get('/register-example', RegisterExample::class)->name('examples.register');
+            Route::get('/forgot-password-example', ForgotPasswordExample::class)->name('examples.forgot-password');
+            Route::get('/reset-password-example', ResetPasswordExample::class)->name('examples.reset-password');
+            Route::get('/transactions', Transactions::class)->name('billing.transactions');
+            Route::get('/bootstrap-tables', BootstrapTables::class)->name('ui.bootstrap-tables');
+            Route::get('/lock', Lock::class)->name('auth.lock');
+            Route::get('/buttons', Buttons::class)->name('ui.buttons');
+            Route::get('/notifications', Notifications::class)->name('ui.notifications');
+            Route::get('/forms', Forms::class)->name('ui.forms');
+            Route::get('/modals', Modals::class)->name('ui.modals');
+            Route::get('/typography', Typography::class)->name('ui.typography');
+        });
+    });

@@ -44,7 +44,8 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = URL::signedRoute('reset-password', ['id' => $this->token]);
+        // Ajuste al nuevo esquema de rutas con prefijo configurable (proj.*)
+        $url = URL::signedRoute(config('proj.route_name_prefix', 'proj') . '.auth.reset-password', ['id' => $this->token]);
         return (new MailMessage)
                     ->subject('Reset your password')
                     ->line('Hey, did you forget your password? Click the button to reset it.')

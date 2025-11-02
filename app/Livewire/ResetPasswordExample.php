@@ -8,6 +8,6 @@ class ResetPasswordExample extends Component
 {
     public function render()
     {
-        return view('reset-password-example');
+        return view('reset-password-example')->layout('layouts.app');
     }
 }

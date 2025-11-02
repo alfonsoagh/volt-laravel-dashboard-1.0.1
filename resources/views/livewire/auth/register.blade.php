@@ -1,12 +1,13 @@
- <main>
-    {{-- <title>Volt Laravel Dashboard - Sign Up page</title> --}}
-        <!-- Section -->
-        <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
-            <div class="container">
+ 
+{{-- Nota Livewire: esta vista debe tener UN único elemento raíz --}}
+{{-- El layout se aplica desde el componente con ->layout('layouts.app') --}}
+
+<section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+    <div class="container">
                 {{-- <p class="text-center"><a href="{{ route('dashboard') }}" class="text-gray-700"><i class="fas fa-angle-left me-2"></i> Back to homepage</a></p> --}}
-                <div wire:ignore.self class="row justify-content-center form-bg-image" data-background-lg="/assets/img/illustrations/signin.svg">
-                    <div class="col-12 d-flex align-items-center justify-content-center">
-                        <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+        <div wire:ignore.self class="row justify-content-center form-bg-image" data-background-lg="/assets/img/illustrations/signin.svg">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">Create Account</h1>
                             </div>
@@ -69,12 +70,13 @@
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="fw-normal">
                                     Already have an account?
-                                    <a href="{{ route('login') }}" class="fw-bold">Login here</a>
+                                    <a href="{{ route(config('proj.route_name_prefix', 'proj').'.auth.login') }}" class="fw-bold">Login here</a>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+</section>

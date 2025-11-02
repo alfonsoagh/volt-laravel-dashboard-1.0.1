@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
     public function test_root_redirects_to_login()
     {
         $response = $this->get('/');
-
-        $response->assertRedirect('/login');
+        $expected = route(config('proj.route_name_prefix', 'proj') . '.auth.login');
+        $response->assertRedirect($expected);
     }
 }

@@ -1,14 +1,15 @@
+ 
 <nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
   <div class="sidebar-inner px-2 pt-3">
     <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
       <div class="d-flex align-items-center">
         <div class="avatar-lg me-4">
-          <img src="/assets/img/team/profile-picture-3.jpg" class="card-img-top rounded-circle border-white"
+          <img src="{{ asset('assets/img/team/profile-picture-3.jpg') }}" class="card-img-top rounded-circle border-white"
             alt="Bonnie Green">
         </div>
         <div class="d-block">
           <h2 class="h5 mb-3">Hi, Jane</h2>
-          <a href="/login" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+          <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.auth.login') }}" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
             <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,17 +32,17 @@
     </div>
     <ul class="nav flex-column pt-3 pt-md-0">
       <li class="nav-item">
-        <a href="/dashboard" class="nav-link d-flex align-items-center">
+  <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.dashboard.index') }}" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon me-3">
-            <img src="/assets/img/brand/light.svg" height="20" width="20" alt="Volt Logo">
+            <img src="{{ asset('assets/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
           </span>
           <span class="mt-1 ms-1 sidebar-text">
             Volt Laravel
           </span>
         </a>
       </li>
-      <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}">
-        <a href="/dashboard" class="nav-link">
+      <li class="nav-item">
+        <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.dashboard.index') }}" class="nav-link">
           <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
@@ -66,13 +67,13 @@
         </span>
         <div class="multi-level collapse show" role="list" id="submenu-laravel" aria-expanded="false">
           <ul class="flex-column nav">
-            <li class="nav-item {{ Request::segment(1) == 'profile' ? 'active' : '' }}">
-              <a href="/profile" class="nav-link">
+            <li class="nav-item">
+              <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.profile.index') }}" class="nav-link">
                 <span class="sidebar-text">Profile</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'users' ? 'active' : '' }}">
-              <a href="/users" class="nav-link">
+            <li class="nav-item">
+              <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.users.index') }}" class="nav-link">
                 <span class="sidebar-text">User management</span>
               </a>
             </li>
@@ -95,8 +96,8 @@
           </span>
         </a>
       </li>
-      <li class="nav-item {{ Request::segment(1) == 'transactions' ? 'active' : '' }}">
-        <a href="/transactions" class="nav-link">
+      <li class="nav-item">
+        <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.billing.transactions') }}" class="nav-link">
           <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
@@ -161,11 +162,11 @@
                 clip-rule="evenodd"></path>
             </svg></span>
         </span>
-        <div class="multi-level collapse {{ Request::segment(1) == 'bootstrap-tables' ? 'show' : '' }}" role="list"
+        <div class="multi-level collapse" role="list"
           id="submenu-app" aria-expanded="false">
           <ul class="flex-column nav">
-            <li class="nav-item {{ Request::segment(1) == 'bootstrap-tables' ? 'active' : '' }}">
-              <a class="nav-link" href="/bootstrap-tables">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.bootstrap-tables') }}">
                 <span class="sidebar-text">Bootstrap Tables</span>
               </a>
             </li>
@@ -195,42 +196,42 @@
         <div class="multi-level collapse" role="list" id="submenu-pages" aria-expanded="false">
           <ul class="flex-column nav">
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('profile-example') }}">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.profile.example') }}">
                 <span class="sidebar-text">Profile</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('login-example') }}">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.examples.login') }}">
                 <span class="sidebar-text">Sign In</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('register-example') }}">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.examples.register') }}">
                 <span class="sidebar-text">Sign Up</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('forgot-password-example') }}">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.examples.forgot-password') }}">
                 <span class="sidebar-text">Forgot password</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/reset-password-example">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.examples.reset-password') }}">
                 <span class="sidebar-text">Reset password</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/lock">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.auth.lock') }}">
                 <span class="sidebar-text">Lock</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/404">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.errors.404') }}">
                 <span class="sidebar-text">404 Not Found</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/500">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.errors.500') }}">
                 <span class="sidebar-text">500 Not Found</span>
               </a>
             </li>
@@ -261,28 +262,28 @@
           class="multi-level collapse {{ Request::segment(1) == 'buttons' || Request::segment(1) == 'notifications' || Request::segment(1) == 'forms' || Request::segment(1) == 'modals' || Request::segment(1) == 'typography' ? 'show' : '' }}"
           role="list" id="submenu-components" aria-expanded="false">
           <ul class="flex-column nav">
-            <li class="nav-item {{ Request::segment(1) == 'buttons' ? 'active' : '' }}">
-              <a class="nav-link" href="/buttons">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.buttons') }}">
                 <span class="sidebar-text">Buttons</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'notifications' ? 'active' : '' }}">
-              <a class="nav-link" href="/notifications">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.notifications') }}">
                 <span class="sidebar-text">Notifications</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'forms' ? 'active' : '' }}">
-              <a class="nav-link" href="/forms">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.forms') }}">
                 <span class="sidebar-text">Forms</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'modals' ? 'active' : '' }}">
-              <a class="nav-link" href="/modals">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.modals') }}">
                 <span class="sidebar-text">Modals</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::segment(1) == 'typography' ? 'active' : '' }}">
-              <a class="nav-link" href="/typography">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route(config('proj.route_name_prefix', 'proj') . '.ui.typography') }}">
                 <span class="sidebar-text">Typography</span>
               </a>
             </li>
@@ -306,7 +307,7 @@
       <li class="nav-item">
         <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon me-2">
-            <img class="me-2" src="/assets/img/themesberg.svg" height="20" width="20" alt="Themesberg Logo">
+            <img class="me-2" src="{{ asset('assets/img/themesberg.svg') }}" height="20" width="20" alt="Themesberg Logo">
           </span>
           <span class="sidebar-text">Themesberg</span>
         </a>
@@ -314,13 +315,13 @@
       <li class="nav-item">
         <a href="https://updivision.com" target="_blank" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon me-2">
-            <img class="me-2" src="/assets/img/updivision.png" height="20" width="20" alt="Themesberg Logo">
+            <img class="me-2" src="{{ asset('assets/img/updivision.png') }}" height="20" width="20" alt="Themesberg Logo">
           </span>
           <span class="sidebar-text">Updivision</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/upgrade-to-pro"
+        <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.marketing.upgrade-to-pro') }}"
           class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
           <span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

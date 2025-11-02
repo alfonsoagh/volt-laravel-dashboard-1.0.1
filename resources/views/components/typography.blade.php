@@ -1,3 +1,4 @@
+ 
 <div>
 {{-- <title>Volt Laravel Dashboard - Typography</title> --}}
 <div class="py-4">
@@ -24,8 +25,6 @@
             </a>
         </div>
     </div>
-</div>
-
 <div class="row">
     <div class="col-12 mb-4">
         <div class="card border-0 shadow components-section">
@@ -193,5 +192,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 </div>
