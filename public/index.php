@@ -5,10 +5,6 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// Increase memory limit for local development to avoid fatal errors when rendering error pages
-// If you prefer a global change, set memory_limit in your PHP CLI ini (e.g., C:\\php82\\php.ini)
-@ini_set('memory_limit', '512M');
-
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
