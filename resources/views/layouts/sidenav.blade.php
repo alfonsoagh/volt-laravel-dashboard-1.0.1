@@ -32,12 +32,20 @@
     </div>
     <ul class="nav flex-column pt-3 pt-md-0">
       <li class="nav-item">
-  <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.dashboard.index') }}" class="nav-link d-flex align-items-center">
+        @php
+            $sintekLogo = 'assets/img/brand/sintek.png';
+            $hasSintek = file_exists(public_path($sintekLogo));
+        @endphp
+        <a href="{{ route(config('proj.route_name_prefix', 'proj') . '.dashboard.index') }}" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon me-3">
-            <img src="{{ asset('assets/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
+            @if ($hasSintek)
+                <img src="{{ asset($sintekLogo) }}" height="20" width="20" alt="SinTek Logo">
+            @else
+                <img src="{{ asset('assets/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
+            @endif
           </span>
           <span class="mt-1 ms-1 sidebar-text">
-            Volt Laravel
+            SinTek
           </span>
         </a>
       </li>
